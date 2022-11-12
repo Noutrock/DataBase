@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Domicilios</title>
+</head>
+<body>
+
+<h1>DOMICILIOS</h1>
+
+<div>Numero de domicilios : {{no_domicilios}}</div>
+<div><a href="agregar_domicilio">Agregar Domicilio</a></div>
+
+
+<table border="1">
+    <thead>
+    <tr>
+        <th> Id</th>
+        <th> Calle</th>
+        <th> no_calle</th>
+        <th> Pais</th>
+        <th> Eliminar</th>
+        <th> Editar</th>
+
+
+
+    </tr>
+
+
+    </thead>
+    <tbody>
+    {%for domicilio in domicilios%}
+    <tr>
+        <td> {{domicilio.id}}</td>
+        <td> {{domicilio.calle}}</td>
+        <td> {{domicilio.no_calle}}</td>
+        <td> {{domicilio.pais}}</td>
+        <td><a href="eliminar_domicilio/{{domicilio.id}}">Eliminar</a>  </td>
+        <td><a href="editar_domicilio/{{domicilio.id}}">Editar</a> </td>
+
+
+    </tr>
+
+    {%endfor%}
+    </tbody>
+
+
+</table>
+
+ <a href={%url 'inicio'%}>Personas</a>
+
+
+</body>
+</html>
