@@ -15,6 +15,7 @@ def bienvenido(request):
 def RedirectDomicilios(request):
     no_domicilios = Domicilio.objects.count()
     domicilios = Domicilio.objects.order_by('id')
+    cantidadDomicilio = Domicilio.objects.filter(no_calle=2)
 
-    return render(request, 'domicilios.html', {'domicilios' : domicilios, 'no_domicilios':no_domicilios})
+    return render(request, 'domicilios.html', {'domicilios' : domicilios, 'no_domicilios':no_domicilios,'cantidadDomicilio':cantidadDomicilio})
 
